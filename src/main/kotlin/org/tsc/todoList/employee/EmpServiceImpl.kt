@@ -1,12 +1,11 @@
 package org.tsc.todoList.employee
 
-import lombok.extern.slf4j.Slf4j
 import org.springframework.stereotype.Service
+import org.tsc.todoList.employee.reposityory.EmpRepository
 
 @Service
-@Slf4j
-class EmpServiceImpl (val qEmpRepository: QEmpRepository) : EmpService{
+class EmpServiceImpl(val empRepository: EmpRepository) : EmpService{
     override fun selectAllEmployees(): List<Employee> {
-        return qEmpRepository.selectAllEmployees()
+        return empRepository.selectAllEmployees()
     }
 }

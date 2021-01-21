@@ -32,6 +32,11 @@ repositories {
     jcenter()
 }
 
+subprojects {
+    dependencies {
+
+    }
+}
 dependencies {
     api("com.querydsl:querydsl-jpa:4.4.0")
     implementation(kotlin("stdlib"))
@@ -54,9 +59,10 @@ dependencies {
     implementation("com.querydsl:querydsl-jpa:4.4.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
     implementation("org.projectlombok:lombok:1.18.16")
-    implementation("org.projectlombok:lombok:1.18.16")
+    implementation ("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8")
     kapt("com.querydsl:querydsl-apt:4.4.0:jpa") // ":jpa 꼭 붙여줘야 한다!!"
     kapt("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final")
+
 
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")

@@ -1,6 +1,5 @@
 package org.tsc.todoList.employee
 
-import lombok.Builder
 import javax.persistence.*
 
 @Entity

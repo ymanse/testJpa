@@ -88,3 +88,4 @@ gen
 
 # Project exclude paths
 /.gradle/
+/lib/
