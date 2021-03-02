@@ -37,6 +37,12 @@ subprojects {
 
     }
 }
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE")
+    }
+}
 dependencies {
     api("com.querydsl:querydsl-jpa:4.4.0")
     implementation(kotlin("stdlib"))
@@ -51,6 +57,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-websocket")
     implementation("org.springframework.security:spring-security-config")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+//    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("javax.cache:cache-api")
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -60,10 +67,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
     implementation("org.projectlombok:lombok:1.18.16")
     implementation ("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8")
+    implementation("org.junit.jupiter:junit-jupiter:5.4.2")
     kapt("com.querydsl:querydsl-apt:4.4.0:jpa") // ":jpa 꼭 붙여줘야 한다!!"
     kapt("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final")
-
-
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webflux")
@@ -76,6 +82,7 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     annotationProcessor(group = "com.querydsl", name = "querydsl-apt", classifier = "jpa")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+
 }
 
 idea {
